@@ -16,12 +16,30 @@ A ultimate personal health and fitness tracker! Stay motivated, track your progr
 --Yet to Be Updated
 
 
+## 🚀 Installation & Usage
 
-## 📌 Roadmap
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/msaakaash/Personal-Health-Fitness-D2.git
+cd neuralNetworks
+```
 
-- [ ] Add AI-based workout recommendations
-- [ ] Integrate wearable fitness tracker support
-- [ ] Implement community forums & social features
+### 2️⃣ Check the Status of Changes
+```bash
+git status
+```
+### 3️⃣ Add Files to Staging Area
+```bash
+git add .
+```
+### 4️⃣ Commit the Changes
+```bash
+git commit -m "Added new feature or fixed a bug"
+```
+### 5️⃣ Push Changes to GitHub
+```bash
+git push origin main
+```
 
 ## 🤝 Contributing
 
@@ -35,10 +53,6 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License.
 
----
 
-### 💡 Let's Get Fit Together!
+## 💡 Let's Get Fit Together!
 Feel free to reach out for questions, suggestions, or collaborations.
-
-📧 Email: your.email@example.com
-📌 GitHub: [YourUsername](https://github.com/yourusername)
