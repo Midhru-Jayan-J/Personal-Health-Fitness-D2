@@ -16,7 +16,10 @@ A ultimate personal health and fitness tracker! Stay motivated, track your progr
  - **README.md**
 
 ## 🛠️ Tech Stack
---Yet to Be Updated
+- **Frontend** (React- Html, Tailwind CSS, JavaScript)
+- **Backend**(Node.js with Express)
+- **Database** (PostgreSQL, MySQL)
+- **API** (RESTful)
 
 
 ## 🚀 Installation & Usage
