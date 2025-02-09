@@ -12,6 +12,9 @@ A ultimate personal health and fitness tracker! Stay motivated, track your progr
 - 🔔 **Reminders & Notifications** – Stay consistent with scheduled alerts.
 - 🏆 **Achievements & Rewards** – Gamify your fitness journey.
 
+## 📂 Repository Structure  
+ - **README.md**
+
 ## 🛠️ Tech Stack
 --Yet to Be Updated
 
