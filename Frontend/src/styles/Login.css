@@ -1,0 +1,112 @@
+/* Login.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;  /* Ensure full width */
+    background-color: #1a4c97;
+    font-family: Arial, sans-serif;
+}
+
+.left-section {
+    flex: 1;
+    text-align: left;
+    padding-right: 50px;
+}
+
+.welcome-text {
+    font-size: 51px;
+    color: #ffffff;
+    font-weight: bold;
+    padding:25px 0px 0px 175px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 16px;
+    color: #dde0e4;
+    justify-content: center;
+    padding:0px 0px 115px 180px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.login-box {
+    background: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(231, 89, 89, 0.1);
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 12px;
+    color: black;
+}
+
+.input-group input {
+    background-color:transparent;
+    width: 90%;
+    color: rgb(12, 12, 12);
+    padding: 12px 0px 15px 15px;
+    font-size: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #1877f2;
+}
+
+.login-button {
+    width: 95%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #166fe5;
+}
+
+.forgot-password {
+    display: block;
+    margin: 12px 0;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.create-account {
+    width: 50%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #42b72a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.create-account:hover {
+    background-color: #36a420;
+}
