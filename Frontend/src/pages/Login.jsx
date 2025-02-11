@@ -1,16 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email:", email, "Password:", password);
-  };
-
-  return (
+  const Login = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("Email:", email, "Password:", password);
+    };
+  
+    return (
     <div className="login-container">
       <div className="left-section">
         <h1 className="welcome-text">Welcome to our App</h1>
@@ -39,8 +41,8 @@ const Login = () => {
             </div>
             <button type="submit" className="login-button">Log in</button>
           </form>
-          <a href="#" className="forgot-password">Forgotten password?</a>
-          <button className="create-account">Create new account</button>
+          <a href="#" className="forgot-password" onClick={() => navigate("/PasswordRecovery")}>Forgotten password?</a>
+          <button className="create-account" onClick={() => navigate("/Signup")}>Create new account</button>
         </div>
       </div>
     </div>
