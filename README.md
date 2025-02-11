@@ -1,7 +1,7 @@
  
 # 🏋️‍♂️ Personal Health & Fitness Application
 
-A ultimate personal health and fitness tracker! Stay motivated, track your progress, and achieve your fitness goals with ease.
+An ultimate personal health and fitness tracker! Stay motivated, track your progress, and achieve your fitness goals with ease.
 
 ## 🚀 Features
 
@@ -13,8 +13,31 @@ A ultimate personal health and fitness tracker! Stay motivated, track your progr
 - 🏆 **Achievements & Rewards** – Gamify your fitness journey.
 
 ## 📂 Repository Structure  
- - **README.md**
+```
+ 🏋️‍♂️Personal-Health-Fitness-D2         
+├── 📂 Frontend
+│   ├── 📂 public
+│   │   ├── 📂 assets
+│   ├── 📂 src
+│   │   ├── 📂 assets
+│   │   ├── 📂 pages
+│   │   │   ├── App.css
+│   │   │   ├── App.jsx
+│   │   ├── 📂 styles
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   ├── .gitignore
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vite.config.js
+├── README.md
 
+```
 ## 🛠️ Tech Stack
 - **Frontend** (React- Html, Tailwind CSS, JavaScript)
 - **Backend**(Node.js with Express)
@@ -55,8 +78,14 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes
 4. Open a pull request
 
-## 📜 License
+## 👥Developers
+- `Aakaash M S`
+- `Aravind Krishna S V`
+- `Midhru Jayan J`
+- `Karthik Ram S`
 
+
+## 📜 License
 This project is licensed under the MIT License.
 
 
