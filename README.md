@@ -14,10 +14,20 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 
 ## 📂 Repository Structure  
 ```
-📦 Personal-Health-Fitness-D2         
+ 🏋️‍♂️Personal-Health-Fitness-D2         
 ├── 📂 Frontend
 │   ├── 📂 public
+│   │   ├── 📂 assets
 │   ├── 📂 src
+│   │   ├── 📂 assets
+│   │   ├── 📂 pages
+│   │   │   ├── App.css
+│   │   │   ├── App.jsx
+│   │   ├── 📂 styles
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
 │   ├── .gitignore
 │   ├── README.md
 │   ├── eslint.config.js
@@ -26,6 +36,7 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 │   ├── package.json
 │   ├── vite.config.js
 ├── README.md
+
 ```
 ## 🛠️ Tech Stack
 - **Frontend** (React- Html, Tailwind CSS, JavaScript)
