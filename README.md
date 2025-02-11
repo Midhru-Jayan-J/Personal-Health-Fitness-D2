@@ -17,13 +17,17 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
  🏋️‍♂️Personal-Health-Fitness-D2         
 ├── 📂 Frontend
 │   ├── 📂 public
-│   │   ├── 📂 assets
+│   │   ├── vite.svg
 │   ├── 📂 src
 │   │   ├── 📂 assets
 │   │   ├── 📂 pages
-│   │   │   ├── App.css
-│   │   │   ├── App.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── PasswordRecovery.jsx
+│   │   │   ├── Signup.jsx
 │   │   ├── 📂 styles
+│   │   │   ├── Login.css
+│   │   │   ├── Signup.css
 │   │   ├── App.css
 │   │   ├── App.jsx
 │   │   ├── index.css
