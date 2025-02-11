@@ -14,7 +14,7 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 
 ## 📂 Repository Structure  
 ```
-📦 Lung-Cancer-Prediction           
+📦 Personal-Health-Fitness-D2         
 ├── 📂 Frontend
 │   ├── 📂 public
 │   ├── 📂 src
