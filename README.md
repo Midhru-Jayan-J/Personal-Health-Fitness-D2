@@ -39,7 +39,6 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 │   ├── package-lock.json
 │   ├── package.json
 │   ├── vite.config.js
-├── 📂 Backend
 ├── README.md
 
 ```
