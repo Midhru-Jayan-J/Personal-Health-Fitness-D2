@@ -14,14 +14,11 @@ import "../styles/Login.css";
   
     return (
     <div className="login-container">
-      <div className="left-section">
-        <h1 className="welcome-text">Welcome to our App</h1>
-        <p className="description">A ultimate personal health and fitness tracker! Stay motivated, track your progress, and achieve your fitness goals with ease.</p>
-      </div>
       <div className="right-section">
         <div className="login-box">
           <form onSubmit={handleSubmit}>
             <div className="input-group">
+            <h1 className="center-text">Log In</h1>
               <input
                 type="email"
                 placeholder="Email address or phone number"

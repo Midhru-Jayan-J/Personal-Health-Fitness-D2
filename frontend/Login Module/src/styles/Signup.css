@@ -1,0 +1,81 @@
+/* Center the signup container */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 100vh; /* Full viewport height */
+  width: 100vw;
+  background-color: #272323; /* Optional: background color */
+}
+
+.name-group {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 0.25rem; /* Adjust the gap as needed */
+}
+
+.name-group input {
+  flex: 1;
+}
+
+/* Form box styling */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px 37px 25px 37px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+/* Center the h1 tag */
+.center-text {
+  font-size: 28px;
+  color: #0c0d0d;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Styling for input fields */
+.input-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  
+  background-color: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #0056b3;
+  outline: none;
+  padding-left: 14px;
+}
+
+/* Button styling */
+.signup-button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.signup-button:hover {
+  background-color: #004494;
+}
