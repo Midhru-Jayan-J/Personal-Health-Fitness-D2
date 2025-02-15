@@ -15,30 +15,8 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 ## 📂 Repository Structure  
 ```
  🏋️‍♂️Personal-Health-Fitness-D2         
-├── 📂 Frontend
-│   ├── 📂 public
-│   │   ├── vite.svg
-│   ├── 📂 src
-│   │   ├── 📂 assets
-│   │   ├── 📂 pages
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── PasswordRecovery.jsx
-│   │   │   ├── Signup.jsx
-│   │   ├── 📂 styles
-│   │   │   ├── Login.css
-│   │   │   ├── Signup.css
-│   │   ├── App.css
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   ├── main.jsx
-│   ├── .gitignore
-│   ├── README.md
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── vite.config.js
+├── 📂 frontend
+│   ├── 📂 Login Module
 ├── README.md
 
 ```
