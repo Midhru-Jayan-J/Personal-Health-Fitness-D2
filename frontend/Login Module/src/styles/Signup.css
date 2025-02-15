@@ -9,17 +9,6 @@
   background-color: #272323; /* Optional: background color */
 }
 
-.name-group {
-  display: flex;
-  justify-content: space-between;
-
-  gap: 0.25rem; /* Adjust the gap as needed */
-}
-
-.name-group input {
-  flex: 1;
-}
-
 /* Form box styling */
 .form-box {
   display: flex;
@@ -29,7 +18,7 @@
   padding: 20px 37px 25px 37px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 350px; /* Adjusted width */
 }
 
 /* Center the h1 tag */
@@ -40,23 +29,39 @@
   margin-bottom: 20px;
 }
 
-/* Styling for input fields */
+/* Input fields styling */
 .input-group {
   margin-bottom: 15px;
   width: 100%;
 }
 
+/* Ensuring all input fields are of the same width */
 .input-group input,
-.input-group select {
-  width: 100%;
+.input-group select 
+{
+  width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  
   background-color: white;
+  display: block;
+  margin: 0 auto;
 }
 
+/* Ensure name fields are of equal width */
+.name-group {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.name-group input {
+  flex: 1;
+  width: 100%;
+}
+
+/* Focus styling */
 .input-group input:focus,
 .input-group select:focus {
   border-color: #0056b3;
@@ -67,13 +72,34 @@
 /* Button styling */
 .signup-button {
   padding: 10px 20px;
+  padding-left: 20px;
   background-color: #0056b3;
   color: white;
+  align-items: center;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ensure name fields are of equal width and alignment */
+.name-group {
+  display: flex;
+  gap: 5px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+}
+
+.name-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
 }
 
 .signup-button:hover {

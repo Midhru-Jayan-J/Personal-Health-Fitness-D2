@@ -9,6 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [phoneNol, setPhoneNo] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +36,20 @@ const Signup = () => {
               placeholder="Last Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Phone Number"
+              value={phoneNol}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (/^\d*$/.test(value)) {
+                  setPhoneNo(value);
+                }
+              }}
               required
             />
           </div>
