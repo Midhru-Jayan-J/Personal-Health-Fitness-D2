@@ -17,6 +17,7 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
  🏋️‍♂️Personal-Health-Fitness-D2         
 ├── 📂 frontend
 │   ├── 📂 Login Module
+|   ├── 📂 Home
 │   ├── 📂 Recommendation Module
 ├── README.md
 
