@@ -11,10 +11,29 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phoneNol, setPhoneNo] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("First Name:", firstName, "Last Name:", lastName, "DOB:", dob, "Gender:", gender, "Email:", email, "Password:", password);
-    // Add logic for submitting the signup data
+
+    // Send data to backend to handle the email sending
+    try {
+      const response = await fetch('http://localhost:5000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ firstName, email }),
+      });
+
+      const data = await response.json();
+      if (response.status === 200) {
+        console.log('Email sent successfully');
+        // You can redirect the user to a login page or another page after signup
+      } else {
+        console.log('Error sending email:', data.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -63,7 +82,9 @@ const Signup = () => {
           </div>
           <div className="input-group">
             <select value={gender} onChange={(e) => setGender(e.target.value)} required>
-              <option value="">Select Gender</option>
+              <option value="" disabled>
+                Gender
+              </option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="prefer_not_to_say">Prefer not to say</option>
