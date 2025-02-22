@@ -14,6 +14,27 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Check if all fields are filled
+    if (
+      !firstName ||
+      !lastName ||
+      !dob ||
+      !gender ||
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !phoneNol
+    ) {
+      alert("Please fill in all the fields.");
+      return;
+    }
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
     // Send data to backend to handle the email sending
     try {
       const response = await fetch('http://localhost:5000/send-email', {

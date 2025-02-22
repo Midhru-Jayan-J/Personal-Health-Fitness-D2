@@ -4,9 +4,9 @@
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   width: 100vw;
-  background-color: #272323; /* Optional: background color */
+  background-color: #272323;
 }
 
 /* Form box styling */
@@ -15,10 +15,10 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
-  padding: 20px 37px 25px 37px;
+  padding: 25px 40px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 350px; /* Adjusted width */
+  width: 450px;
 }
 
 /* Center the h1 tag */
@@ -27,38 +27,47 @@
   color: #0c0d0d;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Input fields styling */
 .input-group {
   margin-bottom: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Ensuring all input fields are of the same width */
 .input-group input,
-.input-group select 
-{
-  width: calc(100% - 20px);
-  padding: 10px;
+.input-group select {
+  width: 100%;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   background-color: white;
-  display: block;
-  margin: 0 auto;
+  color: black;
 }
 
-/* Ensure name fields are of equal width */
+/* Placeholder text color */
+.input-group input::placeholder,
+.input-group select {
+  color: black;
+  opacity: 1;
+}
+
+/* Ensure name fields are inline and wider */
 .name-group {
   display: flex;
-  gap: 5px;
+  gap: 15px;
   width: 100%;
 }
 
 .name-group input {
   flex: 1;
   width: 100%;
+  padding: 12px;
 }
 
 /* Focus styling */
@@ -71,51 +80,18 @@
 
 /* Button styling */
 .signup-button {
-  padding: 10px 20px;
-  padding-left: 20px;
+  padding: 12px;
   background-color: #0056b3;
   color: white;
-  align-items: center;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Ensure name fields are of equal width and alignment */
-.name-group {
-  display: flex;
-  gap: 5px;
-  width: calc(100% - 20px);
-  margin: 0 auto;
-}
-
-.name-group input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   font-size: 16px;
-  background-color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
 }
 
 .signup-button:hover {
   background-color: #004494;
-}
-/* Make the signup container fixed at the center of the webpage */
-.signup-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Ensure date and gender fields have the same font family in placeholder as other fields */
-.input-group input::placeholder,
-.input-group select::placeholder {
-  font-family: inherit;
-  
 }
