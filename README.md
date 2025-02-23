@@ -31,7 +31,7 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 ### 💡 Note: `npm install antd` must be used for Ant Design Components.
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/msaakaash/Personal-Health-Fitness-D2.git
+git clone https://github.com/Midhru-Jayan-J/Personal-Health-Fitness-D2.git
 
 ```
 
