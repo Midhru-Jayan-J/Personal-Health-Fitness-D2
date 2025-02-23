@@ -32,7 +32,6 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/msaakaash/Personal-Health-Fitness-D2.git
-cd neuralNetworks
 ```
 
 ### 2️⃣ Check the Status of Changes
