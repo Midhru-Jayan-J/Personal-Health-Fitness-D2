@@ -14,7 +14,8 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 
 ## 📂 Repository Structure  
 ```
- 🏋️‍♂️Personal-Health-Fitness-D2         
+ 🏋️‍♂️Personal-Health-Fitness-D2
+├── 📂 backend      
 ├── 📂 frontend
 │   ├── 📂 frontend
 ├── README.md
