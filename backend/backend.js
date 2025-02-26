@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { Pool } = require('pg');
-
+const bcrypt = require('bcrypt');
 const app = express();
 const port = 3000;
 const corsOptions = {
@@ -28,9 +28,11 @@ app.post('/signup', async (req, res) => {
         if (userAlreadyExist.rows.length > 0) {
             return res.status(409).json({ error: 'User already exists' });
         }
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password,salt);
         const result = await pool.query(
             'INSERT INTO "USERS" (username, firstname, lastname, phone_number, email, gender, password) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
-            [username, firstname, lastname, phone_number, email, gender, password]
+            [username, firstname, lastname, phone_number, email, gender, hashedPassword]
         );
         return res.status(201).json({message: "User created successfully"});
     } catch (err) {
@@ -45,10 +47,14 @@ app.get('/login', async (req, res) => {
         if (result.rows.length === 0) {
             return res.status(404).json({ error: 'User not found' });
         }
-        if (result.rows[0].password !== password) {
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password,salt);
+
+        if (result.rows[0].password !== hashedPassword) {
             return res.status(401).json({ error: 'Invalid password' });
         }
         res.status(200).json({message: "Login successful"});
+        
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
