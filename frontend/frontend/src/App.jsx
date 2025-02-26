@@ -1,14 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login"; // Update path based on your folder structure
+import Signup from "./Pages/Signup";
+import PasswordRecovery from "./Pages/PasswordRecovery";
 
-
-import Signup from './Pages/Signup.jsx'
-const App = () => {
+function App() {
   return (
-    <div>
-      <Signup/>
-      </div>
-      
-   
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
