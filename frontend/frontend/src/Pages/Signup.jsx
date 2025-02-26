@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/Signup.css";
 
 const Signup = () => {
+  const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [dob, setDob] = useState("");
@@ -9,51 +10,45 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [phoneNol, setPhoneNo] = useState("");
+  const [phoneNo, setPhoneNo] = useState(""); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if all fields are filled
-    if (
-      !firstName ||
-      !lastName ||
-      !dob ||
-      !gender ||
-      !email ||
-      !password ||
-      !confirmPassword ||
-      !phoneNol
-    ) {
-      alert("Please fill in all the fields.");
-      return;
-    }
-
-    // Check if password and confirm password match
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
+      alert("Passwords do not match");
       return;
     }
 
-    // Send data to backend to handle the email sending
+    const userData = {
+      username:username,
+      firstname:firstName,
+      lastname:lastName,
+      phone_number:phoneNo,
+      email:email,
+      gender:gender,
+      password:password
+    };
+    console.log(userData);
     try {
-      const response = await fetch('http://localhost:5000/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ firstName, email }),
+      const response = await fetch("http://localhost:3000/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
-      if (response.status === 200) {
-        console.log('Email sent successfully');
-        // You can redirect the user to a login page or another page after signup
-      } else {
-        console.log('Error sending email:', data.message);
+      if (!response.ok) {
+      throw new Error("Network response was not ok");
       }
+
+      const data = await response.json();
+      console.log("Success:", data);
+      // Handle success (e.g., redirect to login page)
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
+      // Handle error (e.g., show error message)
     }
   };
 
@@ -63,6 +58,13 @@ const Signup = () => {
         <h1 className="center-text">Create a new account</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-group name-group">
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
             <input
               type="text"
               placeholder="First Name"
@@ -83,7 +85,7 @@ const Signup = () => {
             <input
               type="text"
               placeholder="Phone Number"
-              value={phoneNol}
+              value={phoneNo}
               onChange={(e) => {
                 const value = e.target.value;
                 if (/^\d*$/.test(value)) {
@@ -106,9 +108,9 @@ const Signup = () => {
               <option value="" disabled>
                 Gender
               </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="prefer_not_to_say">Prefer not to say</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Prefer not to say</option>
             </select>
           </div>
           <div className="input-group">

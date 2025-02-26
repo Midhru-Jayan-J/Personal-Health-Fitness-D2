@@ -1,10 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { Pool } = require('pg');
 
 const app = express();
 const port = 3000;
-
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 const pool = new Pool({
     host: 'localhost',
     user: 'postgres',
@@ -12,11 +17,12 @@ const pool = new Pool({
     password: '6',
     port: 5432,
 });
-
-app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
 app.post('/signup', async (req, res) => {
     const { username, firstname, lastname, phone_number, email, gender, password } = req.body;
+    console.log(req.body);
     try {
         const userAlreadyExist = await pool.query('SELECT * FROM "USERS" WHERE email = $1', [email]);
         if (userAlreadyExist.rows.length > 0) {
