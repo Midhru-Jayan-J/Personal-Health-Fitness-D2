@@ -7,9 +7,30 @@ import "../styles/Login.css";
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log("Email:", email, "Password:", password);
+      const userData =  {
+        email:email,
+        password:password
+      };
+      try {
+        const response = await fetch ("http://localhost:3000/login", {
+          method: "GET",
+          headers: {
+            "Content-Type" : "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        if  (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        console.log("Success : ",data);
+      } catch (error) {
+        console.error("Error:",error);
+      }
     };
   
     return (
@@ -36,7 +57,7 @@ import "../styles/Login.css";
                 required
               />
             </div>
-            <button type="submit" className="login-button">Log in</button>
+            <button type="submit" className="login-button" >Login</button>
           </form>
           <a href="#" className="forgot-password" onClick={() => navigate("/PasswordRecovery")}>Forgotten password?</a>
           <button className="create-account" onClick={() => navigate("/Signup")}>Create new account</button>
