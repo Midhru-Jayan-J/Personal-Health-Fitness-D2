@@ -1,6 +1,6 @@
 import React from 'react'
-import './Hero.css'
-import dark_arrow from '../../assets/health_assets/dark-arrow.png'
+import '../styles/Hero.css'
+import dark_arrow from '../assets/health_assets/dark-arrow.png'
 
 const Hero = () => {
   return (
