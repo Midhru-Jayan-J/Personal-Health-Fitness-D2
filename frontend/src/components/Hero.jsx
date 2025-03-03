@@ -1,18 +1,19 @@
-import React from 'react'
-import '../styles/Hero.css'
-import dark_arrow from '../assets/health_assets/dark-arrow.png'
+import React from "react";
+import "../styles/Hero.css";
 
 const Hero = () => {
   return (
-    <div className='hero container'>
-        <div className='hero-txt'>
-            <h1>Your Transformation Starts Here! </h1>
-            <p>Our fitness programs challenge limits, build strength, and boost confidence. With expert trainers, top equipment, and a supportive community, we help you reach your goals.</p>
-            <button className='btn'>Explore More <img src={dark_arrow}></img></button>
-        </div>
-      
+    <div className="hero-container">
+      <div className="hero"></div>
+      <div className="hero-txt">
+        <h1>Welcome to Maka Fitness</h1>
+        <p>Achieve your fitness goals with expert training and guidance.</p>
+        <button className="btn">
+          Get Started <img src="../assets/health_assets/dark-arrow.png" alt="Arrow" />
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
