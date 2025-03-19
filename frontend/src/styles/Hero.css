@@ -1,7 +1,7 @@
 .hero{
     width:100;
     min-height:100vh;
-    background: linear-gradient(rgba(26, 25, 35, 0.7),rgba(26, 25, 35, 0.7)) ,url('../../assets/health_assets/hero.png');
+    background: linear-gradient(rgba(26, 25, 35, 0.7),rgba(26, 25, 35, 0.7)) ,url('../assets/health_assets/hero.png');
     background-size: cover;
     color:#fff;
     display:flex;

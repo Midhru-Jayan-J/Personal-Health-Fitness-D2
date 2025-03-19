@@ -15,7 +15,7 @@ import "../styles/Login.css";
       };
       try {
         const response = await fetch ("http://localhost:3000/login", {
-          method: "GET",
+          method: "POST",
           headers: {
             "Content-Type" : "application/json",
           },
@@ -27,7 +27,10 @@ import "../styles/Login.css";
         }
 
         const data = await response.json();
-        console.log("Success : ",data);
+        console.log("Success : ",data.message);
+        localStorage.setItem("token", data.token).then(() => {
+          navigate("/"); 
+        });
       } catch (error) {
         console.error("Error:",error);
       }
@@ -42,7 +45,7 @@ import "../styles/Login.css";
             <h1 className="center-text">Log In</h1>
               <input
                 type="email"
-                placeholder="Email address or phone number"
+                placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

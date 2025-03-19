@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "../styles/Hero.css"; // Ensure this file exists
 import dark_arrow from "../assets/health_assets/dark-arrow.png";
 import Navbar from "../components/Navbar"; // Import Navbar
