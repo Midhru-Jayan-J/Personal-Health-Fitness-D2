@@ -25,6 +25,8 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 - **Backend**(Node.js with Express)
 - **Database** (PostgreSQL, MySQL)
 - **API** (RESTful)
+- **Postman**
+- **Dialogflow**
 
 
 ## 🚀 Installation & Usage

@@ -1,6 +1,6 @@
 .programs{
-    margin:80px auto;
-    width:90%;
+    /* margin:80px auto; */
+    /* width:90%; */
     display:flex;
     align-items:center;
     justify-content: space-between;
@@ -15,4 +15,20 @@
 
 .program{
     flex-basis:31%;
+}
+
+.program:hover {
+    transform: scale(1.05);
+}
+
+.program-icon {
+    width: 80px;
+    height: 150px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.program-icon:hover {
+    transform: rotate(15deg) scale(1.1);
 }
