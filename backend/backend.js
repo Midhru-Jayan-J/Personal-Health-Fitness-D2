@@ -71,7 +71,7 @@ app.post('/login', async (req, res) => {
 
     // Send OTP via email
     const mailOptions = {
-      from: 'your-email@gmail.com',
+      from: 'aravindkrishnasv@gmail.com',
       to: email,
       subject: 'Your OTP Code',
       text: `Your OTP code is: ${otp}`,
