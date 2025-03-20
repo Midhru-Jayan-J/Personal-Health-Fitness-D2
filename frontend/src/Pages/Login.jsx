@@ -28,9 +28,9 @@ import "../styles/Login.css";
 
         const data = await response.json();
         console.log("Success : ",data.message);
-        localStorage.setItem("token", data.token).then(() => {
-          navigate("/"); 
-        });
+        localStorage.setItem("token", data.token)
+
+
       } catch (error) {
         console.error("Error:",error);
       }

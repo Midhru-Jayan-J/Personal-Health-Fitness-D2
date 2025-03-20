@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/Navbar.css';
 import logo from '../assets/health_assets/logo.png';
 

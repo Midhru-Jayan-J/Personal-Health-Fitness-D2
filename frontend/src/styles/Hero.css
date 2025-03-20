@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-.hero{
-    width:100;
-    min-height:100vh;
-    background: linear-gradient(rgba(26, 25, 35, 0.7),rgba(26, 25, 35, 0.7)) ,url('../assets/health_assets/hero.png');
-=======
 .hero-container {
     width: 100vw;
     height: 100vh;
     background-image: url('../assets/health_assets/hero.png');
->>>>>>> 47c603eddf06446a51642f5c3fc0f0c0f852599a
     background-size: cover;
     background-position: center;
     
