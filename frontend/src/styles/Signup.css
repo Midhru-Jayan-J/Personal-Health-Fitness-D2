@@ -95,3 +95,7 @@
 .signup-button:hover {
   background-color: #004494;
 }
+.login-button{
+  background-color: #0056b3;
+  width:60%;
+}

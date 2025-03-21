@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+
 import "../styles/Signup.css";
 
 const Signup = () => {
@@ -11,6 +13,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phoneNo, setPhoneNo] = useState(""); 
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,10 +48,9 @@ const Signup = () => {
 
       const data = await response.json();
       console.log("Success:", data);
-      // Handle success (e.g., redirect to login page)
+      navigate("/login");
     } catch (error) {
       console.error("Error:", error);
-      // Handle error (e.g., show error message)
     }
   };
 
@@ -144,6 +146,7 @@ const Signup = () => {
             Sign up
           </button>
         </form>
+        <Link to="/login">Already Existing User? Then Login</Link>
       </div>
     </div>
   );

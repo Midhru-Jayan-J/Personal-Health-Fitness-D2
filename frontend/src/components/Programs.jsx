@@ -11,7 +11,7 @@ import programIcon3 from "../assets/health_assets/program_icon_3.png";
 
 const Programs = () => {
   return (
-    <section className="programs">
+    <div className="programs">
       <div className="program">
         <img src={program1} alt="Program 1" />
         <div className="program-overlay">
@@ -35,7 +35,7 @@ const Programs = () => {
         </div>
         <h3>Cardio</h3>
       </div>
-    </section>
+    </div>
   );
 };
 

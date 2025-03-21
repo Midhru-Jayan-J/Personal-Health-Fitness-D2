@@ -1,33 +1,29 @@
-.programs {
-    margin: 50px auto; /* Reduce margin to avoid too much spacing */
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.programs{
+    /* margin:80px auto; */
+    /* width:90%; */
+    display:flex;
+    align-items:center;
     justify-content: space-between;
-    padding: 20px 0; /* Add some padding to separate it from hero */
+
 }
 
-.program {
-    flex-basis: 31%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+.program img{
+    width:100%;
+    border-radius:10px;
+    display:block;
+}
+
+.program{
+    flex-basis:31%;
 }
 
 .program:hover {
     transform: scale(1.05);
 }
 
-.program img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-}
-
 .program-icon {
     width: 80px;
-    height: 80px;
+    height: 150px;
     margin-top: 15px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
