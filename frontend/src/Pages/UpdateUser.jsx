@@ -1,79 +1,77 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import "./UpdateUser.css";
-/* UpdateUser.css */
-
+import { useState } from "react";
 
 const UpdateUser = () => {
-    const { id } = useParams(); // Get user ID from URL params
-    const [user, setUser] = useState({ name: "", email: "", password: "" });
-    const [message, setMessage] = useState("");
+  const [username, setUsername] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [phone_number, setPhoneNo] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
+  const [password, setPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-    useEffect(() => {
-        // Fetch user data
-        fetch(`/api/users/${id}`)
-            .then((res) => res.json())
-            .then((data) => setUser(data))
-            .catch((err) => console.error("Error fetching user data:", err));
-    }, [id]);
 
-    const handleChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/user", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify({ username, firstname, lastname, phone_number, email, password, oldPassword })
+      });
+      const data = await response.json();
+      if(response.status !== 200) {
+        return setMessage(data.error || "An error occurred");
+      }
+      setMessage(data.message || "Profile updated successfully!");
+    } catch (error) {
+      setMessage("An error occurred");
+        console.error("Error:", error);
+    }
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        fetch(`/api/users/${id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(user),
-        })
-            .then((res) => res.json())
-            .then(() => setMessage("User updated successfully!"))
-            .catch(() => setMessage("Error updating user"));
-    };
+  return (
+    <div className="signup-container">
+      <div className="form-box">
+        <h1 className="center-text">Update Profile</h1>
+        {message && <p className="text-red-500">{message}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="input-group name-group">
+            <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}  />
+            <input type="text" placeholder="First Name" value={firstname} onChange={(e) => setFirstName(e.target.value)}  />
+            <span className="spacer"></span>
+            <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastName(e.target.value)}  />
+          </div>
+          <div className="input-group">
+            <input type="text" placeholder="Phone Number" value={phone_number} onChange={(e) => { if (/^\d*$/.test(e.target.value)) setPhoneNo(e.target.value); }}  />
+          </div>
+          <div className="input-group">
+            <select value={gender} onChange={(e) => setGender(e.target.value)} >
+              <option value="nochange" disabled>Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Prefer not to say</option>
+            </select>
+          </div>
+          <div className="input-group">
+            <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)}  />
+          </div>
+          <div className="input-group">
+            <input type="password" placeholder="Old Password" value={oldPassword} onChange={(e) => setOldPassword(e.target.value)} required />
+          </div>
+          <div className="input-group">
+            <input type="password" placeholder="New Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+          <button type="submit" className="signup-button">Update</button>
+        </form>
 
-    return (
-        <div className="max-w-md mx-auto mt-10 p-5 border rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-5">Update User</h2>
-            {message && <p className="text-green-500">{message}</p>}
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                    type="text"
-                    name="name"
-                    value={user.name}
-                    onChange={handleChange}
-                    placeholder="Name"
-                    className="w-full p-2 border rounded"
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    value={user.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    className="w-full p-2 border rounded"
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    value={user.password}
-                    onChange={handleChange}
-                    placeholder="New Password"
-                    className="w-full p-2 border rounded"
-                />
-                <button
-                    type="submit"
-                    className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-                >
-                    Update User
-                </button>
-            </form>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default UpdateUser;

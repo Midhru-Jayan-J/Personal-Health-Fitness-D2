@@ -43,14 +43,14 @@ const Signup = () => {
       });
 
       if (!response.ok) {
+      console.log(response);
       throw new Error("Network response was not ok");
       }
 
-      const data = await response.json();
-      console.log("Success:", data);
+
       navigate("/login");
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error.message);
     }
   };
 
@@ -103,6 +103,7 @@ const Signup = () => {
               value={dob}
               onChange={(e) => setDob(e.target.value)}
               required
+              data-testid="dob"
             />
           </div>
           <div className="input-group">

@@ -23,11 +23,13 @@ const Login = () => {
       });
 
       if (!response.ok) {
+        console.log(response)
         throw new Error("Network response was not ok");
       }
-      const data = await response.json();
-      console.log("Success:", data.message);
+
       setStep(2); // Move to OTP step
+      console.log(step)
+      localStorage.setItem("token", response.token);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -52,7 +54,7 @@ const Login = () => {
       const data = await response.json();
       console.log("OTP Verified:", data.message);
       localStorage.setItem("token", data.token);
-      navigate("/Home"); // Redirect to dashboard or home
+      navigate("/"); // Redirect to dashboard or home
     } catch (error) {
       console.error("Error:", error);
     }

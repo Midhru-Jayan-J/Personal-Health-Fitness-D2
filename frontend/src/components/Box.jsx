@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Progress, Button } from 'antd';
-import './Box.css'
+import '../styles/Box.css';
 // import { Link } from 'react-router-dom';
 import i1 from '../assets/i1.jpg'
 const Box = ({ type, level }) => {
