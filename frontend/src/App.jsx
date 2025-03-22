@@ -1,34 +1,43 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { useEffect } from "react";
-import Home from "./Pages/Home"; // Ensure the correct path
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import PasswordRecovery from "./Pages/PasswordRecovery";
-import { useAuthStore } from "./store/useAuthStore";
-import UpdateUser from "./Pages/UpdateUser";
-// import Loader from "./components/Loader"; // Ensure the correct path to the Loader component
+import { useState } from 'react';
+import Hero1 from './components/Hero1';
+import Generator from './components/Generator';
+import Workout from './components/Workout';
+import { generateWorkout } from './utils/functions';
 
 function App() {
+  const [workout, setWorkout] = useState(null);
+  const [poison, setPoison] = useState('individual');
+  const [muscles, setMuscles] = useState([]);
+  const [goal, setGoal] = useState('strength_power');
 
-  const {authUser, checkAuth} = useAuthStore();
-  useEffect(() => {
-    checkAuth()
-  }, [checkAuth])
+  function updateWorkout() {
+    if (muscles.length < 1) {
+      return;
+    }
+    let newWorkout = generateWorkout({ poison, muscles, goal });
+    setWorkout(newWorkout);
 
-
+    // Smooth scroll to workout section
+    setTimeout(() => {
+      document.getElementById('workout')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={authUser?<Home />: <Navigate to='/login' />} />
-        <Route path="/login" element={!authUser?<Login />:<Navigate to='/' />} />
-        <Route path="/signup" element={!authUser?<Signup />:<Navigate to='/' />} />
-        <Route path="/password-recovery" element={<PasswordRecovery />} />
-        <Route path="/update-user" element = {!authUser?<UpdateUser/>:<Navigate to='/login' />} />
-      </Routes>
-    </Router>
+    <main className="min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base">
+      <Hero1 />
+      <Generator
+        poison={poison}
+        setPoison={setPoison}
+        muscles={muscles}
+        setMuscles={setMuscles}
+        goal={goal}
+        setGoal={setGoal}
+        updateWorkout={updateWorkout}
+      />
+      {workout && <Workout id="workout" workout={workout} />}
+    </main>
   );
 }
 
 export default App;
-
