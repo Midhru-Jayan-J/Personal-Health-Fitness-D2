@@ -67,6 +67,7 @@ Contributions are welcome! Please follow these steps:
 - `Aravind Krishna S V`
 - `Midhru Jayan J`
 - `Karthik Ram S`
+- `Nishanth `
 
 
 ## 📜 License
