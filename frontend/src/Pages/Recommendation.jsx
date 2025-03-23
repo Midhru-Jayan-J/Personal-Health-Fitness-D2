@@ -1,29 +1,44 @@
-// import  { useState } from 'react';
-import Box from '../components/Box';
-import './recommendation.css';
+import { useState } from 'react';
+import Hero1 from '../components/Hero1';
+import Generator from '../components/Generator';
+import Workout from '../components/Workout';
+import { generateWorkout } from '../utils/functions';
+import '../styles/Recommendation.css';
 
-const Recommendation = () => {
-    const typeHeader = ["Beginner",'Intermediate','Advanced'];
+function App() {
+  const [workout, setWorkout] = useState(null);
+  const [poison, setPoison] = useState('individual');
+  const [muscles, setMuscles] = useState([]);
+  const [goal, setGoal] = useState('strength_power');
 
-    return(
-    <div className='card'>
-<div className="carousel w-full">
-  <div id="item1" className="carousel-item">
-    <Box type={typeHeader[0]} level={1}/>
-  </div>
-  <div id="item2" className="carousel-item">
-    <Box type={typeHeader[1]} level={2}/>
-  </div>
-  <div id="item3" className="carousel-item">
-    <Box type={typeHeader[2]} level={3}/>
-  </div>
-</div>
-<div className="flex w-full justify-center gap-2 py-2">
-  <a href="#item1" className="btn btn-xs">1</a>
-  <a href="#item2" className="btn btn-xs">2</a>
-  <a href="#item3" className="btn btn-xs">3</a>
-</div>
-</div>
-)}
+  function updateWorkout() {
+    if (muscles.length < 1) {
+      return;
+    }
+    let newWorkout = generateWorkout({ poison, muscles, goal });
+    setWorkout(newWorkout);
 
-export default Recommendation
+    // Smooth scroll to workout section
+    setTimeout(() => {
+      document.getElementById('workout')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+
+  return (
+    <main className="min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base">
+      <Hero1 />
+      <Generator
+        poison={poison}
+        setPoison={setPoison}
+        muscles={muscles}
+        setMuscles={setMuscles}
+        goal={goal}
+        setGoal={setGoal}
+        updateWorkout={updateWorkout}
+      />
+      {workout && <Workout id="workout" workout={workout} />}
+    </main>
+  );
+}
+
+export default App;

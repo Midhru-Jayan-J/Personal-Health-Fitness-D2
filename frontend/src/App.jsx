@@ -6,6 +6,7 @@ import Signup from "./Pages/Signup";
 // import PasswordRecovery from "./Pages/PasswordRecovery";
 import { useAuthStore } from "./store/useAuthStore";
 import UpdateUser from "./Pages/UpdateUser";
+import Recommendation from "./Pages/Recommendation";
 // import Loader from "./components/Loader"; // Ensure the correct path to the Loader component
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={!authUser?<Login />:<Navigate to='/' />} />
         <Route path="/signup" element={!authUser?<Signup />:<Navigate to='/' />} />
         <Route path="/updateuser" element = {authUser?<UpdateUser/>:<Navigate to='/login' />} />
+        <Route path="/workout" element={authUser?<Recommendation/>:<Navigate to='/' />} />
       </Routes>
     </Router>
   );
