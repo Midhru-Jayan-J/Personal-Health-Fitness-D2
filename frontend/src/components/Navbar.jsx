@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link to="/updateuser">Update Profile</Link>
         </li>
         <li>
-          <a href="">Chat-Man</a>
+          <a href="http://localhost:8501">Chat-Man</a>
         </li>
         <li>
           <button onClick={logoutFunction}>Logout</button>

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import ExerciseCard from "../components/ExerciseCard";
-import { vi, describe, test, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 
 describe("ExerciseCard Component", () => {
   const mockExercise = {
