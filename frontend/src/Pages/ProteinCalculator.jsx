@@ -65,6 +65,28 @@ const ProteinCalculator = () => {
     return { category: "Obese", color: "#FF5252" };
   };
 
+  const mailHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/sendmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          content: `This amount will provide your daily protein need of ${proteinNeeded}g`,
+        }),
+      });
+      const data = await response.json();
+      if (response.status !== 200) {
+        console.log(data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <div className="protein-calculator">
       <h2>BMI & Protein Calculator</h2>
@@ -136,6 +158,7 @@ const ProteinCalculator = () => {
                   {proteinNeeded}g
                 </p>
               </div>
+              <button onClick={mailHandler}>Mail This?</button>
             </div>
           )}
         </div>

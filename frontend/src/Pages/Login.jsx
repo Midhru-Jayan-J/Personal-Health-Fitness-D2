@@ -26,7 +26,7 @@ const Login = () => {
       }
       const data = await response.json();
       localStorage.setItem("token", data.token);
-      navigate("/");
+      window.location.reload();
     } catch (error) {
       console.error("Error:", error);
     }

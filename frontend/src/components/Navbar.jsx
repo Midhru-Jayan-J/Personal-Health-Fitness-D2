@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const logoutFunction = () => {
   localStorage.removeItem("token");
+  window.location.reload();
 };
 
 const Navbar = () => {
@@ -24,7 +25,9 @@ const Navbar = () => {
         <li>
           <Link to="/updateuser">Update Profile</Link>
         </li>
-        <li>Chat-Man</li>
+        <li>
+          <a href="">Chat-Man</a>
+        </li>
         <li>
           <button onClick={logoutFunction}>Logout</button>
         </li>
