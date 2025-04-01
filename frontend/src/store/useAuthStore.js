@@ -4,12 +4,8 @@ import { create } from "zustand"
 
 export const useAuthStore = create((set) => ({
     authUser: null,
-    isSigningUp: false,
     isLoggingIn: false,
-    isUpdatingProfile: false,
     isCheckingAuth: true,
-    onlineUsers: [],
-    socket: null,
 
     checkAuth: async() => {
         try {
@@ -23,6 +19,7 @@ export const useAuthStore = create((set) => ({
             if(!res.ok) throw new Error("Not Authenticated");
             const data = await res.json();
             set({authUser: data});
+            
         } catch (error) {
             console.log("Error in checkAuth: ", error);
             set({authUser: null});

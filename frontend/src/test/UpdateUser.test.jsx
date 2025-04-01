@@ -14,7 +14,7 @@ describe("UpdateUser Component", () => {
   beforeEach(() => {
     fetch.mockClear(); // Clear fetch mock before each test
   });
-
+  
   test("renders update profile form", () => {
     render(<UpdateUser />);
 
