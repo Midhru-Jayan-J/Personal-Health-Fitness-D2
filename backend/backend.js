@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const pool = require('./keys/db');
 const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer')
 const app = express();
 const port = 3000;
 const corsOptions = {
@@ -13,6 +14,14 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 app.use(passport.initialize());
 require('./config/passport')(passport);
+
+const transpoter = nodemailer.createTransport({
+    service:'gmail.com',
+    auth:{
+        user:"makapersonalfitness@gmail.com",
+        pass:"maka@1234"
+    }
+});
 
 app.use(cors(corsOptions));
 
@@ -145,7 +154,28 @@ app.put('/user', passport.authenticate('jwt',{session:false}), async (req, res) 
     }
 });
 
+app.post('/sendmail', passport.authenticate("jwt",{session:false}),async (req,res)=>{
 
+    const { content } = req.body;
+    const email = await pool.query('SELECT email FROM "USERS" WHERE id = $1', [req.user.id]);
+    if (email.rows.length === 0) {
+        return res.status(400).json({ error: "Email is required" });
+    }
+    const mailOptions = {
+        from: 'makapersonalfitness@gmail.com',
+        to: req.user.email,
+        subject: "Protein Update!!!",
+        text: content
+    };
+
+    transpoter.sendMail(mailOptions,(error, info)=>{
+        if (error){
+            return res.status(500).json({error:error.message});
+        }
+        res.json({message:"Email sent"});
+    });
+
+});
 
 
 app.delete('/deregister', passport.authenticate("jwt",{session:false}), async (req, res) => {
