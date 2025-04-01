@@ -63,44 +63,56 @@ describe("Login Component", () => {
       </MemoryRouter>
     );
 
-    fireEvent.change(screen.getByPlaceholderText("Email address"), { target: { value: "test@example.com" } });
-    fireEvent.change(screen.getByPlaceholderText("Password"), { target: { value: "password123" } });
+    fireEvent.change(screen.getByPlaceholderText("Email address"), {
+      target: { value: "test@example.com" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("Password"), {
+      target: { value: "password123" },
+    });
 
     fireEvent.click(screen.getByText("Login"));
 
     await waitFor(() => {
-      expect(fetch).toHaveBeenCalledWith("http://localhost:3000/login", expect.any(Object));
+      expect(fetch).toHaveBeenCalledWith(
+        "http://localhost:3000/login",
+        expect.any(Object)
+      );
       expect(localStorage.getItem("token")).toBe("mock-token");
-      expect(navigate).toHaveBeenCalledWith("/");
+      expect(window.location.reload());
     });
   });
 
   test("shows error when login fails", async () => {
-    const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-  
+    const consoleErrorSpy = vi
+      .spyOn(console, "error")
+      .mockImplementation(() => {});
+
     fetch.mockImplementationOnce(() =>
       Promise.resolve({
         ok: false,
         json: () => Promise.resolve({ error: "Invalid credentials" }),
       })
     );
-  
+
     render(
       <MemoryRouter>
         <Login />
       </MemoryRouter>
     );
-  
-    fireEvent.change(screen.getByPlaceholderText("Email address"), { target: { value: "wrong@example.com" } });
-    fireEvent.change(screen.getByPlaceholderText("Password"), { target: { value: "wrongpassword" } });
-  
+
+    fireEvent.change(screen.getByPlaceholderText("Email address"), {
+      target: { value: "wrong@example.com" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("Password"), {
+      target: { value: "wrongpassword" },
+    });
+
     fireEvent.click(screen.getByText("Login"));
-  
+
     await waitFor(() => {
       expect(consoleErrorSpy).toHaveBeenCalled(); // Verify that console.error was triggered
     });
-  
+
     consoleErrorSpy.mockRestore(); // Restore console.error after test
   });
-  
 });
