@@ -1,6 +1,6 @@
 nav{
     width: 100%;
-    background:#333;
+    background:#173f7b;
     color:#fff;
     padding: 4px 0;
     position: fixed;
@@ -8,7 +8,9 @@ nav{
     left:0;
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content: space-between;
+    /* overflow: hidden; */
+    box-sizing: border-box;
     z-index: 10;
 }
 

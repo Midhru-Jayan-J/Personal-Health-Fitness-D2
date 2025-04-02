@@ -210,6 +210,8 @@ export const EXERCISES = {
     //     description: 'With a bench inclined between 30 and 45 degrees, hold the dumbbells directly above your chest. With your scapula retracted, lower the dumbells keeping elbows to a maximum 45 degree flare, until your thumbs touch your nipples. Then press back up.',
     //     substitutes: ['inclined dumbbell press', 'inclined pushup']
     // },
+
+    
     dumbbell_bench_press: {
         type: 'compound',
         meta: {

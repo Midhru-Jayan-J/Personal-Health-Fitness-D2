@@ -4,10 +4,16 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    
+}
+
+.signup-container{
+    width: 100%;
 }
 
 .max-w-md {
     max-width: 28rem;
+    overflow-x: hidden;
 }
 
 .mx-auto {
