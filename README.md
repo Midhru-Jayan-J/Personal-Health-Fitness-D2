@@ -69,6 +69,12 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes
 4. Open a pull request
 
+
+## Code of Conduct
+
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing to this project.
+
+
 ## Developers
 - `Aakaash M S`
 - `Aravind Krishna S V`
