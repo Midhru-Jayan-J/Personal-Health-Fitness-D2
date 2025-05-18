@@ -1,27 +1,18 @@
  
-# 🏋️‍♂️ Personal Health & Fitness Application
+# Personal Health and Fitness Application
 
 An ultimate personal health and fitness tracker! Stay motivated, track your progress, and achieve your fitness goals with ease.
 
-## 🚀 Features
+## Features
 
-- 🏃 **Activity Tracking** – Log workouts, steps, and calories burned.
-- 🍎 **Diet & Nutrition** – Monitor daily calorie intake and meal plans.
-- 📊 **Progress Charts** – Visualize fitness trends over time.
-- 💪 **Workout Plans** – Personalized exercise routines based on goals.
-- 🔔 **Reminders & Notifications** – Stay consistent with scheduled alerts.
-- 🏆 **Achievements & Rewards** – Gamify your fitness journey.
+-  **Activity Tracking** – Log workouts, steps, and calories burned.
+-  **Diet & Nutrition** – Monitor daily calorie intake and meal plans.
+-  **Progress Charts** – Visualize fitness trends over time.
+-  **Workout Plans** – Personalized exercise routines based on goals.
+-  **Reminders & Notifications** – Stay consistent with scheduled alerts.
+-  **Achievements & Rewards** – Gamify your fitness journey.
 
-## 📂 Repository Structure  
-```
- 🏋️‍♂️Personal-Health-Fitness-D2
-├── 📂 backend
-├── 📂 chatman    
-├── 📂 frontend
-├── README.md
-
-```
-## 🛠️ Tech Stack
+## Tech Stack
 - **Frontend** (React- Html, Tailwind CSS, JavaScript)
 - **Backend**(Node.js with Express)
 - **Database** (PostgreSQL, MySQL)
@@ -30,32 +21,47 @@ An ultimate personal health and fitness tracker! Stay motivated, track your prog
 - **Dialogflow**
 
 
-## 🚀 Installation & Usage
-### 💡 Note: `npm install antd` must be used for Ant Design Components.
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/Midhru-Jayan-J/Personal-Health-Fitness-D2.git
+## Installation & Usage
+> Note: Please use the following instructions to work with this version.
 
+### Install Dependencies
+```bash
+npm install antd
+```
+### Click the Fork Button
+```
+On the top-right corner of the page, click the **Fork** button.
 ```
 
-### 2️⃣ Check the Status of Changes
+### Clone Your Forked Repository
+```bash
+git clone https://github.com/<your-username>/Personal-Health-Fitness-D2.git
+```
+_Replace `<your-username>` with your GitHub username._
+
+### Check the Status of Changes
 ```bash
 git status
 ```
-### 3️⃣ Add Files to Staging Area
+
+### Add Files to Staging Area
 ```bash
 git add .
 ```
-### 4️⃣ Commit the Changes
+
+### Commit the Changes
 ```bash
 git commit -m "Added new feature or fixed a bug"
 ```
-### 5️⃣ Push Changes to GitHub
+
+### Push Changes to GitHub
 ```bash
 git push origin main
 ```
 
-## 🤝 Contributing
+
+
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 1. Fork the repository
@@ -63,7 +69,7 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes
 4. Open a pull request
 
-## 👥Developers
+## Developers
 - `Aakaash M S`
 - `Aravind Krishna S V`
 - `Midhru Jayan J`
@@ -71,9 +77,6 @@ Contributions are welcome! Please follow these steps:
 - `Nishanth `
 
 
-## 📜 License
-This project is licensed under the MIT License.
+## License
+This project is licensed under the [BSD 3-Clause License](LICENSE).
 
-
-## 💡 Let's Get Fit Together!
-Feel free to reach out for questions, suggestions, or collaborations.
