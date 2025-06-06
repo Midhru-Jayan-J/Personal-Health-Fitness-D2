@@ -18,8 +18,8 @@ require('./config/passport')(passport);
 const transpoter = nodemailer.createTransport({
     service:'gmail.com',
     auth:{
-        user:"makapersonalfitness@gmail.com",
-        pass:"maka@1234"
+        user:"msaakaash@gmail.com",
+        pass:"ljxw boor zfaj ewsv"
     }
 });
 
@@ -162,7 +162,7 @@ app.post('/sendmail', passport.authenticate("jwt",{session:false}),async (req,re
         return res.status(400).json({ error: "Email is required" });
     }
     const mailOptions = {
-        from: 'makapersonalfitness@gmail.com',
+        from: 'msaakaash@gmail.com',
         to: req.user.email,
         subject: "Protein Update!!!",
         text: content

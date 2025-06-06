@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import { describe, test, expect } from "vitest"; // Or "jest" if using Jest
 import Footer from "../components/Footer"; // Adjust the path based on your project structure
 
 describe("Footer Component", () => {
